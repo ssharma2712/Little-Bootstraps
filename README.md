@@ -1,4 +1,3 @@
 # Little Bootstraps
-Bootstrap for Pylogenetics\n
-Bootstrap analysis for Big Phylogenetic data
-
+The little bootstraps analyses have three different steps. \n
+The first step is to 
