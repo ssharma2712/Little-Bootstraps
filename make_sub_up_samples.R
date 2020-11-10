@@ -31,15 +31,3 @@ for(i in 1:20){
 
 
 
-# for(i in 1:1){
-#   setwd("C:\\Users\\tuj44355\\Downloads\\chloroplast\\cp\\Simulation\\Final\\new_simulated_data_pnas")
-#   sub_dir <- paste("Subsample", i , sep = "")
-#   setwd(sub_dir)
-#   files = list.files(pattern = ".fasta")
-#   
-#   for(j in 1:length(files)){
-#     file_name <- files[j]
-#     shell(paste("iqtree -s", file_name, "-m GTR+R4"))
-#   }
-#   
-# }
