@@ -1,3 +1,2 @@
 # Little Bootstraps
-The little bootstraps analyses have three different steps. "\n"
-The first step is to create little bootstraps replicates. The make_subsample_upsample.R function in r 
+The little bootstraps analyses have three different steps. The first step is to create little bootstraps replicates. The function make_subsample_upsample.R creates little bootstraps replicates. The second step is to infer maximum likelihood phylogenetic tree from these replicates. We used IQTree for this step. The last and final step is to extract little sample-wise bootstrap confidence limit (bcl) and estimate the final bcl for a species group by aggregating little sample-wise bcls.   
