@@ -7,19 +7,12 @@ lb_sampler("~/Example/example.fasta", g= 0.9, s = 10, r = 10)
 ```
 <br />
 Second step: In this step, the maximum likelihood (ML) tree is inferred for each replicate dataset. In our analyses, we used IQ-TREE for ML tree inference which can be downloaded from http://www.iqtree.org/ - automatic!. Both linux and windows versions of IQ-TREE software are available here. Other ML tree inference program like MEGA (https://www.megasoftware.net/), RAxML (https://cme.h-its.org/exelixis/web/software/raxml/), PHYLIP (https://evolution.genetics.washington.edu/phylip.html) etc., also can be used. <br /> 
-```
+```md
 iqtree -s /Example/Subsample1/example_sub1_rep.fasta -m GTR+G5 
-```
-```R
-lb_sampler("~/Example/example.fasta", g= 0.9, s = 10, r = 10)
 ```
 <br />
 Final step: This is an aggregation step. In this steps, all inferred trees are aggregated from each Subsample directories and compute the final bootstrap confidence limit (BCL) using median bagging. The aggregator function in aggregator.R is used for this this step. The inputs for the aggregator function are the path where inferred trees are located in Subsample directories, tree file format (.nwk, or .treefile), the candiate tree on which the BCLs will be placed, the number of subsample (s, if NULL the function will use all Subsample resultes in the directory), the number of replicates (r, if NULL the function will use all tree file in the Subsample directory), and the output file name (if NULL, the output tree file name will be output_tree_lb.nwk).  
 <br />
-```R
+```md
 aggregator("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 10, r = 10, output_file = "example_output")
 ```
-```R
-lb_sampler("~/Example/example.fasta", g= 0.9, s = 10, r = 10)
-```
-
