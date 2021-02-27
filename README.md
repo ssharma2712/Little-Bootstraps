@@ -5,7 +5,7 @@ First step: The lb_sampler function in lb_sampler.R is used for creatin little b
 lb_sampler("~/Example/example.fasta", g= 0.9, s = 2, r = 2)
 <br />
 <br />
-Second step: In this step, the maximum likelihood (ML) tree is inferred for each replicate dataset. In our analyses, we used IQ-TREE for ML tree inference which can be downloaded from http://www.iqtree.org/. Both linux and windows versions of IQ-TREE software are available here. Other ML tree inference program like MEGA (https://www.megasoftware.net/), RAxML (https://cme.h-its.org/exelixis/web/software/raxml/), PHYLIP (https://evolution.genetics.washington.edu/phylip.html) etc., also can be used. <br /> <br />
+Second step: In this step, the maximum likelihood (ML) tree is inferred for each replicate dataset. In our analyses, we used IQ-TREE for ML tree inference which can be downloaded from http://www.iqtree.org/ - automatic!. Both linux and windows versions of IQ-TREE software are available here. Other ML tree inference program like MEGA (https://www.megasoftware.net/), RAxML (https://cme.h-its.org/exelixis/web/software/raxml/), PHYLIP (https://evolution.genetics.washington.edu/phylip.html) etc., also can be used. <br /> <br />
 iqtree -s /Example/Subsample1/example_sub1_rep.fasta -m GTR+G5 
 <br />
 <br />
