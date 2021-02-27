@@ -18,3 +18,6 @@ Final step: This is an aggregation step. In this steps, all inferred trees are a
 ```R
 aggregator("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 10, r = 10, output_file = "example_output")
 ```
+
+<br /> <br />
+All R codes are tested using R version 3.6.3 in R studio (version 1.2.5033)
