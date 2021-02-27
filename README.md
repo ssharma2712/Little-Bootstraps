@@ -23,6 +23,7 @@ aggregator("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 10, r = 10
 All R codes are tested using R version 3.6.3 in R studio (version 1.2.5033).
 <br />  
 R packages used:
+<br />
 -BiocManager (version 1.30.10)
 -Biostrings  (version 2.54.0)
 -stringr     (version 1.4.0)
