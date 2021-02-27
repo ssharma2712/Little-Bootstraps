@@ -15,6 +15,6 @@ iqtree -s /Example/Subsample1/example_sub1_rep.fasta -m GTR+G5
 Final step: This is an aggregation step. In this steps, all inferred trees are aggregated from each Subsample directories and compute the final bootstrap confidence limit (BCL) using median bagging. The aggregator function in aggregator.R is used for this this step. The inputs for the aggregator function are the path where inferred trees are located in Subsample directories, tree file format (.nwk, or .treefile), the candiate tree on which the BCLs will be placed, the number of subsample (s, if NULL the function will use all Subsample resultes in the directory), the number of replicates (r, if NULL the function will use all tree file in the Subsample directory), and the output file name (if NULL, the output tree file name will be output_tree_lb.nwk).  
 <br /> <br />
 
-```md
+```R
 aggregator("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 10, r = 10, output_file = "example_output")
 ```
