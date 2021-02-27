@@ -26,9 +26,14 @@ R packages used:
 <br />
 <br />
 -BiocManager (version 1.30.10)
+
 -Biostrings  (version 2.54.0)
+
 -stringr     (version 1.4.0)
+
 -ape         (version 5.3)
+
 -phangorn    (version 2.5.5) 
+
 <br />
 <br />
