@@ -14,7 +14,7 @@ lb_sampler <- function(data_path, g, s, r){
     BiocManager::install("Biostrings")
   
   if (!requireNamespace("stringr", quietly = TRUE))
-    BiocManager::install("stringr")
+    install.packages("stringr")
   
   ########## Library required ##########
   
