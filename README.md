@@ -12,7 +12,7 @@ Little bootstraps analyses have three different steps.
 <br />
 <br />
 
-## First step: 
+#### First step: 
 <br />
 
 The first step of the little bootstrap analyses is to create little bootstrap replicates. The lb_sampler function in lb_sampler.R is used.  
