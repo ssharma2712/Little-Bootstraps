@@ -62,9 +62,18 @@ output_file    : a character vector specifying the output file name. The output 
 
 <br />
 
-## Final step:
+## Getting Started:
 
 <br />
+
+To perform the little bootstraps analyses in a local computer, please follow these steps:<br /><br />
+1.	Download and install R (https://www.r-project.org/) and Rstudio (https://rstudio.com/products/rstudio/download/).<br />
+2.	Download ‘Codes’ directory on the local computer. <br />
+3.	In the Rstudio session, type ``setwd(“directory path”)`` to change the working directory to the folder that contains ``lb_sampler`` and ``aggregator`` function<br />
+4.	Type ``source(lb_sampler)``, and ``source(aggregator)`` to make available these  function in global environment. <br />
+5.	Download and install an ML tree inference software (e.g., IQ-TREE). <br />
+
+To perform the little bootsraps analyses in a local computer, an
 
 The little bootstraps analyses have three different steps. <br />
 <br />
