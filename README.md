@@ -1,7 +1,22 @@
 # Little Bootstraps 
 Little bootstraps produce accurate bootstrap confidence limit on phylogenies inferred from very long sequene alignmnet. 
 <br />
+
+# Directory Structure 
+"Codes" directory contains lb_sampler (lb_sampler.R) and aggregator (agrregator.R) R functions.
+"Example" directory contains example data (example.fasta), and a candidate tree (ex_candiate_tree.nwk) to perform little bootstrap analyses. 
+<br />
+
 # Introduction
+Little bootstraps analyses have three different steps. <br />
+First step: The first step of the little bootstrap analyses is to create little bootstrap replicates. The lb_sampler function in lb_sampler.R is used.  
+lb_sampler(data_path,  g,  s,  r)<br />
+data_path : Input sequence alignment in fasta format that will be used for little bootstrap analyses. <br />
+g                 : a numeric value within the range (0.6<= g <= 0.9) that specify the little sample size. The little sample size is equal to L^g where L is the sequence length                     determined from the input alignment.  <br />
+s                 : a numeric value that specifies the number of little samples. <br />
+r                 : a numeric value that specifies the number of replicates for each little sample. <br /> <br />
+
+Second step: In this step, the maximum likelihood (ML) tree is inferred for each replicate dataset. The choice of ML inference software and computations are flexible. Users can use any ML tree inference software and compute ML tree for little bootstrap replicates sequentially or parallelly based on their computational architecture. In our analyses, we used IQ-TREE for ML tree inference which can be downloaded from http://www.iqtree.org/. Both Linux and Windows versions of IQ-TREE software are available here. Other ML tree inference program like MEGA (https://www.megasoftware.net/), RAxML (https://cme.h-its.org/exelixis/web/software/raxml/), PHYLIP (https://evolution.genetics.washington.edu/phylip.html)
 
 <br />
 
