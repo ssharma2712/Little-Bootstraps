@@ -72,6 +72,21 @@ To perform the little bootstraps analyses in a local computer, please follow the
 3.	In the Rstudio session, type ``setwd(“directory path”)`` to change the working directory to the folder that contains ``lb_sampler`` and ``aggregator`` function<br />
 4.	Type ``source(lb_sampler)``, and ``source(aggregator)`` to make available these  function in global environment. <br />
 5.	Download and install an ML tree inference software (e.g., IQ-TREE). <br />
+6.	Install folowwing R packages if those are not installed. 
+
+```R
+install.packages("BiocManager")
+BiocManager::install("Biostrings")
+install.packages("stringr")
+install.packages("ape")
+install.packages("phangorn")
+```
+
+<br />
+
+## Getting Started:
+
+<br />
 
 To perform the little bootsraps analyses in a local computer, an
 
