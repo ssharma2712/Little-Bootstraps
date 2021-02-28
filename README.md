@@ -1,6 +1,5 @@
 # Little Bootstraps 
 <br />
-
 # Introduction
 
 <br />
