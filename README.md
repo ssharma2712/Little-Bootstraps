@@ -1,6 +1,9 @@
 # Little Bootstraps 
 <br />
+
 # Introduction
+
+<br />
 
 The little bootstraps analyses have three different steps. <br />
 <br />
