@@ -117,7 +117,7 @@ example_sub1rep2.fasta
 iqtree -s ~/Example/Subsample1/example_sub1rep1.fasta -m GTR+G5
 ```
 
-Trees for each replicate dataset will be stored in each Subsample directory. The tree file name for replicate 1 in Subsample1 will be `` example_sub1rep1.fasta.treefile`` if we use the IQ-TREE. In case of using other software, tree-files need to be converted into ``.treefile``, or ``.nwk`` format. <br />
+Trees for each replicate dataset will be stored in each Subsample directory. The tree file name for replicate 1 in Subsample1 will be `` example_sub1rep1.fasta.treefile`` if we use the IQ-TREE. In case of using other software, tree-files need to be converted into ``.treefile``, or ``.nwk`` format. <br /><br />
 4.	For the final step, type 
 
 ```R
@@ -133,15 +133,11 @@ All R codes are tested using R version 3.6.3 in R studio (version 1.2.5033).
 R packages used:
 <br />
 <br />
--BiocManager (version 1.30.10)
-
--Biostrings  (version 2.54.0)
-
--stringr     (version 1.4.0)
-
--ape         (version 5.3)
-
--phangorn    (version 2.5.5) 
+-``BiocManager (version 1.30.10)``
+-``Biostrings  (version 2.54.0)``
+-``stringr     (version 1.4.0)``
+-``ape         (version 5.3)``
+-``phangorn    (version 2.5.5)`` 
 
 <br />
 <br />
