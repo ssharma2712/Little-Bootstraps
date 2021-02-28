@@ -110,7 +110,7 @@ example_sub1rep1.fasta
 example_sub1rep2.fasta
 example_sub1rep2.fasta
 ```
-
+<br />
 3.	Infer ML phylogenetic tree for each replicate dataset using the preferred software. Users can flexibly perform this step. Users specify the substitution model and other tree inference settings subjectively for the software. As an example of IQ-TREE analysis for the replicate 1 in the Subsample1:
 
 ``` 
