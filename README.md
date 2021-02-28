@@ -126,18 +126,24 @@ aggregator("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 3, r = 3, 
 
 The function will output the candidate tree file with the little bootstraps supports, and the name of the output tree file will be `` example_output.nwk``.<br />
 
+<br />
 
-<br /> <br />
+#### Software and Packages's Version:
+
+<br />
+
 All R codes are tested using R version 3.6.3 in R studio (version 1.2.5033).
 <br />  
 R packages used:
 <br />
-<br />
--``BiocManager (version 1.30.10)``
--``Biostrings  (version 2.54.0)``
--``stringr     (version 1.4.0)``
--``ape         (version 5.3)``
--``phangorn    (version 2.5.5)`` 
+
+```
+-BiocManager (version 1.30.10)
+-Biostrings  (version 2.54.0)
+-stringr     (version 1.4.0)
+-ape         (version 5.3)
+-phangorn    (version 2.5.5)
+```
 
 <br />
 <br />
