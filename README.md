@@ -3,18 +3,16 @@ Little bootstraps produce accurate bootstrap confidence limit on phylogenies inf
 <br />
 
 # Directory Structure 
-"Codes" directory contains lb_sampler (lb_sampler.R) and aggregator (agrregator.R) R functions.
-"Example" directory contains example data (example.fasta), and a candidate tree (ex_candiate_tree.nwk) to perform little bootstrap analyses. 
+"Codes" directory contains lb_sampler (lb_sampler.R) and aggregator (agrregator.R) R functions. <br />
+"Example" directory contains example data (example.fasta), and a candidate tree (ex_candiate_tree.nwk) to perform little bootstrap analyses. <br />
 <br />
 
 # Introduction
 Little bootstraps analyses have three different steps. 
 <br />
 <br />
-
 #### First step: 
 <br />
-
 The first step of the little bootstrap analyses is to create little bootstrap replicates. The lb_sampler function in lb_sampler.R is used.  
 
 ```
