@@ -10,7 +10,8 @@ Little bootstraps produce accurate bootstrap confidence limit on phylogenies inf
 # Introduction
 Little bootstraps analyses have three different steps. <br /><br />
 First step: The first step of the little bootstrap analyses is to create little bootstrap replicates. The lb_sampler function in lb_sampler.R is used.  
-```R
+
+```
 lb_sampler(data_path,  g,  s,  r)
 
 
