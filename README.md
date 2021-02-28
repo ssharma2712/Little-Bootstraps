@@ -44,11 +44,12 @@ The last step of little bootstraps analyses is to aggregate results from each su
 ```
 aggregator(path, tree_format, candiate_tree, s = NULL, r = NULL, output_tree = NULL)
 
+
 path           : a character vector that specifies the locations where all inferred trees are located. For example, inferred trees for little sample #1 should be stored in a directory named Subsample1 in the input directory.
 
 tree_format    :  a character vector that indicates the tree file format in the directory. Tree file format must be ‘.nwk’,  or ‘.treefile’
 
-candidate_tree : s an object of class "phylo" specifying the candidate tree. The BCLs are placed on this candidate tree. 
+candidate_tree :  an object of class "phylo" specifying the candidate tree. The BCLs are placed on this candidate tree. 
 
 s              :  a numeric value input that specifies the number of little samples that will be used. If s = NULL, inferred trees from all little samples in the input directory are used for computing BCLs. 
 
