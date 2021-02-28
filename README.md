@@ -1,5 +1,5 @@
 # Little Bootstraps 
-Little bootstraps produce accurate bootstrap confidence limits (BCLs) on phylogenies inferred from very long sequene alignmnet. 
+Little bootstraps produce accurate bootstrap confidence limits (BCLs) on phylogenies inferred from very long sequence alignment. 
 <br />
 
 ## Directory Structure 
@@ -128,7 +128,7 @@ The function will output the candidate tree file with the little bootstraps supp
 
 <br />
 
-#### Software and Packages's Version:
+#### Software and Packages' Version:
 
 <br />
 
