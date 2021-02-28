@@ -27,6 +27,7 @@ g                 : a numeric value within the range (0.6<= g <= 0.9) that speci
 s                 : a numeric value that specifies the number of little samples. 
 r                 : a numeric value that specifies the number of replicates for each little sample.
 ```
+
 <br />
 #### Second step: 
 <br />
