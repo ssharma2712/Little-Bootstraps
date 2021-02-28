@@ -84,9 +84,39 @@ install.packages("phangorn")
 
 <br />
 
-## Getting Started:
+## Little Bootstraps Analyses for Example Dataset:
 
 <br />
+To perform the little bootstraps analyses on the example dataset, please follow these steps:
+1.	Download the ``Example`` directory on the local computer. 
+2.	Run the function in the R session by typing 
+```R
+lb_sampler("~/Example/example.fasta", g= 0.9, s = 3, r = 3)
+```
+This function will create three directories in the working directories:
+```
+Subsample1
+Subsample2
+Subsample2
+```
+Each subsample directory will contain three little bootstraps replicate datasets. For example, the ``Subsample1`` directory will contain 
+```
+example_sub1rep1.fasta
+example_sub1rep2.fasta
+example_sub1rep2.fasta
+```
+3.	Infer ML phylogenetic tree for each replicate dataset using the preferred software. Users can flexibly perform this step. Users specify the substitution model and other tree inference settings subjectively for the software. As an example of IQ-TREE analysis for the replicate 1 in the Subsample1:
+``` 
+iqtree -s ~/Example/Subsample1/example_sub1rep1.fasta -m GTR+G5
+```
+Trees for each replicate dataset will be stored in each Subsample directory. The tree file name for replicate 1 in Subsample1 will be `` example_sub1rep1.fasta.treefile`` if we use the IQ-TREE. In case of using other software, tree-files need to be converted into ``.treefile``, or ``.nwk`` format. 
+4.	For the final step, type 
+```R
+aggregator("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 3, r = 3, output_file = "example_output")
+```
+The function will output the candidate tree file with the little bootstraps supports, and the name of the output tree file will be `` example_output.nwk``.
+
+
 
 To perform the little bootsraps analyses in a local computer, an
 
