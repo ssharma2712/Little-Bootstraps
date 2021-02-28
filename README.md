@@ -1,4 +1,7 @@
-# Little Bootstraps
+# Little Bootstraps 
+<br />
+# Introduction
+
 The little bootstraps analyses have three different steps. <br />
 <br />
 First step: The lb_sampler function in lb_sampler.R is used for creatin little bootstrap replicates The function inputs are sequence alignment in fasta format, g (0.6<= g <= 0.9, and subsample size is L^0.g), the number of little samples (s), and the number of replicates (r). This function will create directory for little samples (Subsample1, Subsample2, etc.) in the working directory and save the little bootstrap replicate datasets in these subsaple directories.<br /> 
