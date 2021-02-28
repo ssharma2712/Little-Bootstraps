@@ -8,13 +8,15 @@ Little bootstraps produce accurate bootstrap confidence limit on phylogenies inf
 <br />
 
 # Introduction
-Little bootstraps analyses have three different steps. <br />
+Little bootstraps analyses have three different steps. <br /><br />
 First step: The first step of the little bootstrap analyses is to create little bootstrap replicates. The lb_sampler function in lb_sampler.R is used.  
 ```R
 lb_sampler(data_path,  g,  s,  r)
 ```
 <br />
-data_path : Input sequence alignment in fasta format that will be used for little bootstrap analyses. <br />
+```
+data_path         : Input sequence alignment in fasta format that will be used for little bootstrap analyses. <br />
+```
 g                 : a numeric value within the range (0.6<= g <= 0.9) that specify the little sample size. The little sample size is equal to L^g where L is the sequence length                     determined from the input alignment.  <br />
 s                 : a numeric value that specifies the number of little samples. <br />
 r                 : a numeric value that specifies the number of replicates for each little sample. <br /> <br />
