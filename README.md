@@ -20,11 +20,10 @@ lb_sampler(data_path,  g,  s,  r)
 
 data_path         : input sequence alignment in fasta format that will be used for little bootstrap analyses. 
 
-
-
 g                 : a numeric value within the range (0.6<= g <= 0.9) that specify the little sample size. The little sample size is equal to L^g where L is the sequence length determined from the input alignment.  
 
 s                 : a numeric value that specifies the number of little samples. 
+
 r                 : a numeric value that specifies the number of replicates for each little sample.
 ```
 <br />
@@ -34,6 +33,29 @@ r                 : a numeric value that specifies the number of replicates for 
 <br />
 In this step, the maximum likelihood (ML) tree is inferred for each replicate dataset. The choice of ML inference software and computations are flexible. Users can use any ML tree inference software and compute ML tree for little bootstrap replicates sequentially or parallelly based on their computational architecture. In our analyses, we used IQ-TREE for ML tree inference which can be downloaded from http://www.iqtree.org/. Both Linux and Windows versions of IQ-TREE software are available here. Other ML tree inference program like MEGA (https://www.megasoftware.net/), RAxML (https://cme.h-its.org/exelixis/web/software/raxml/), PHYLIP (https://evolution.genetics.washington.edu/phylip.html)
 
+<br />
+
+#### Final step:
+
+<br />
+
+The last step of little bootstraps analyses is to aggregate results from each subsample. In this step, all inferred trees are aggregated to compute little sample-wise BCLs. The estimated little bootstrap supports are computed using median bagging. The aggregator function in aggregator.R is used for this step. Inputs for the aggregator function are:
+
+```
+aggregator(path, tree_format, candiate_tree, s = NULL, r = NULL, output_tree = NULL)
+
+path           : a character vector that specifies the locations where all inferred trees are located. For example, inferred trees for little sample #1 should be stored in a directory named Subsample1 in the input directory.
+
+tree_format    :  a character vector that indicates the tree file format in the directory. Tree file format must be ‘.nwk’,  or ‘.treefile’
+
+candidate_tree : s an object of class "phylo" specifying the candidate tree. The BCLs are placed on this candidate tree. 
+
+s              :  a numeric value input that specifies the number of little samples that will be used. If s = NULL, inferred trees from all little samples in the input directory are used for computing BCLs. 
+
+r              : a numeric value specifying the number of replicate trees will be used from each subsample. If r = NULL, inferred trees from all replicates for a little sample are used. 
+
+output_file    : a character vector specifying the output file name. The output is an object of class `phylo, in ‘.nwk’ format that is the input candidate tree with BCLs. If output_file = NULL, the output file name will be 'output_tree_lb.nwk'.
+```
 <br />
 
 The little bootstraps analyses have three different steps. <br />
