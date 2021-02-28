@@ -13,7 +13,7 @@ Little bootstraps analyses have three different steps.
 <br />
 #### First step: 
 <br />
-The first step of the little bootstrap analyses is to create little bootstrap replicates. The lb_sampler function in lb_sampler.R is used.  
+The first step of the little bootstrap analyses is to create little bootstrap replicates. The ``lb_sampler`` function in lb_sampler.R is used.  
 
 ```
 lb_sampler(data_path,  g,  s,  r)
@@ -40,7 +40,7 @@ In this step, the maximum likelihood (ML) tree is inferred for each replicate da
 
 <br />
 
-The last step of little bootstraps analyses is to aggregate results from each subsample. In this step, all inferred trees are aggregated to compute little sample-wise BCLs. The estimated little bootstrap supports are computed using median bagging. The aggregator function in aggregator.R is used for this step. Inputs for the aggregator function are:
+The last step of little bootstraps analyses is to aggregate results from each subsample. In this step, all inferred trees are aggregated to compute little sample-wise BCLs. The estimated little bootstrap supports are computed using median bagging. The ``aggregator`` function in aggregator.R is used for this step. Inputs for the aggregator function are:
 
 ```
 aggregator(path, tree_format, candiate_tree, s = NULL, r = NULL, output_tree = NULL)
