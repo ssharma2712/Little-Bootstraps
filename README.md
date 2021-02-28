@@ -16,10 +16,12 @@ lb_sampler(data_path,  g,  s,  r)
 <br />
 
 ```
-data_path         : Input sequence alignment in fasta format that will be used for little bootstrap analyses. <br />
+data_path         : Input sequence alignment in fasta format that will be used for little bootstrap analyses. 
 ```
 
-g                 : a numeric value within the range (0.6<= g <= 0.9) that specify the little sample size. The little sample size is equal to L^g where L is the sequence length                     determined from the input alignment.  <br />
+```
+g                 : a numeric value within the range (0.6<= g <= 0.9) that specify the little sample size. The little sample size is equal to L^g where L is the sequence length                     determined from the input alignment.  
+```
 s                 : a numeric value that specifies the number of little samples. <br />
 r                 : a numeric value that specifies the number of replicates for each little sample. <br /> <br />
 
