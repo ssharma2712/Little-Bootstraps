@@ -3,9 +3,9 @@ Little bootstraps produce accurate bootstrap confidence limits (BCLs) on phyloge
 <br />
 
 ## Directory Structure 
-"Codes" directory contains lb_sampler (lb_sampler.R) and aggregator (agrregator.R) R functions. <br />
+"Codes" directory contains ``lb_sampler`` (lb_sampler.R) and ``aggregator`` (agrregator.R) R functions. <br />
 <br />
-"Example" directory contains example data (example.fasta), and a candidate tree (ex_candiate_tree.nwk) to perform little bootstrap analyses. <br />
+"Example" directory contains example data (example.fasta), and a candidate tree (ex_candiate_tree.nwk) for performing little bootstrap analyses. <br />
 <br />
 
 ## Introduction
