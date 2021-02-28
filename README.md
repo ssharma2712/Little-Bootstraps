@@ -1,13 +1,14 @@
 # Little Bootstraps 
-Little bootstraps produce accurate bootstrap confidence limit on phylogenies inferred from very long sequene alignmnet. 
+Little bootstraps produce accurate bootstrap confidence limits (BCLs) on phylogenies inferred from very long sequene alignmnet. 
 <br />
 
-# Directory Structure 
+## Directory Structure 
 "Codes" directory contains lb_sampler (lb_sampler.R) and aggregator (agrregator.R) R functions. <br />
+<br />
 "Example" directory contains example data (example.fasta), and a candidate tree (ex_candiate_tree.nwk) to perform little bootstrap analyses. <br />
 <br />
 
-# Introduction
+## Introduction
 Little bootstraps analyses have three different steps. 
 <br />
 #### First step: 
@@ -57,6 +58,12 @@ r              : a numeric value specifying the number of replicate trees will b
 
 output_file    : a character vector specifying the output file name. The output is an object of class `phylo, in ‘.nwk’ format that is the input candidate tree with BCLs. If output_file = NULL, the output file name will be 'output_tree_lb.nwk'.
 ```
+<br />
+
+<br />
+
+## Final step:
+
 <br />
 
 The little bootstraps analyses have three different steps. <br />
