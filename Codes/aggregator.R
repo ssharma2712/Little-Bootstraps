@@ -1,6 +1,6 @@
 setwd("/working directory")  # Working Directory
 
-aggregator <- function(path, tree_format, candiate_tree, s = NULL, r = NULL, output_tree = NULL){
+aggregator <- function(path, tree_format, candiate_tree, s = NULL, r = NULL, output_file = NULL){
   
   # path          : Directory path where tree file for each replicate datasets located
   # tree_format   : Tree file format (.nwk, .treefile)
