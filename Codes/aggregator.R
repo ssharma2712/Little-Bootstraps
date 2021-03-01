@@ -7,7 +7,7 @@ aggregator <- function(path, tree_format, candiate_tree, s = NULL, r = NULL, out
   # candidate_tree: The candidate tree that will be assessed
   # s             : Number of subsamples
   # r             : Number of replicates 
-  # output_tree   : Output tree file name
+  # output_file   : Output tree file name
   
   ################# Required Package ##################
   
