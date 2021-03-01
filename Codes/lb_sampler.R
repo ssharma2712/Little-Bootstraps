@@ -28,7 +28,7 @@ lb_sampler <- function(data_path, g, s, r){
   ######################################
   
   f_name <- data_path                                                  # Mother data name
-  sub_name <- str_replace(basename(a), ".fasta", "")                   # Replicate file generic name
+  sub_name <- str_replace(basename(data_path), ".fasta", "")                   # Replicate file generic name
   motherfile <- Biostrings::readAAStringSet(f_name, format = "fasta")  # Reading the mother file 
   sln <- as.numeric(fasta.seqlengths(f_name)[1])                       # Getting the sequence length
   directory <- getwd()
