@@ -43,7 +43,7 @@ In this step, the maximum likelihood (ML) tree is inferred for each replicate da
 The last step of little bootstraps analyses is to aggregate results from each subsample. In this step, all inferred trees are aggregated to compute little sample-wise BCLs. The estimated little bootstrap supports are computed using median bagging. The ``aggregator`` function in aggregator.R is used for this step. Inputs for the aggregator function are:
 
 ```
-aggregator(path, tree_format, candiate_tree, s = NULL, r = NULL, output_tree = NULL)
+aggregator(path, tree_format, candiate_tree, s = NULL, r = NULL, output_file = NULL)
 
 
 path           : a character vector that specifies the locations where all inferred trees are located. For example, inferred trees for little sample #1 should be stored in a directory named Subsample1 in the input directory.
