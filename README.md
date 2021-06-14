@@ -3,7 +3,7 @@ Using the little bootstraps approach to generate bootstrap confidence limits (BC
 <br />
 
 ## Directory Structure 
-The "Codes" directory contains files for two R functiosn: ``lb_sampler`` (lb_sampler.R), and ``aggregator`` (agrregator.R), and ``lb_precision`` (lb_precision.R). <br />
+The "Codes" directory contains files for two R functiosn: ``lb_sampler`` (lb_sampler.R), and ``aggregator`` (lb_agrregator.R), and ``lb_precision`` (lb_precision.R). <br />
 <br />
 The "Example" directory contains an example data file (example.fasta) and a file containing the phylogenetic tree in the newick format (ex_candiate_tree.nwk) for which BCLs are desired. <br />
 <br />
