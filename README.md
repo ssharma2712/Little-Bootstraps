@@ -3,7 +3,7 @@ Using the little bootstraps approach to generate bootstrap confidence limits (BC
 <br />
 
 ## Directory Structure 
-The "Codes" directory contains files for two R functiosn: ``lb_sampler`` (lb_sampler.R), and ``aggregator`` (lb_agrregator.R), and ``lb_precision`` (lb_precision.R). <br />
+The "Codes" directory contains files for two R functiosn: ``lb_sampler`` (lb_sampler.R), and ``lb_aggregator`` (lb_agrregator.R), and ``lb_precision`` (lb_precision.R). <br />
 <br />
 The "Example" directory contains an example data file (example.fasta) and a file containing the phylogenetic tree in the newick format (ex_candiate_tree.nwk) for which BCLs are desired. <br />
 <br />
@@ -40,10 +40,10 @@ In the second step, the maximum likelihood (ML) tree is inferred for each replic
 
 <br />
 
-In the third step, aggregate ML phylogenies from all little samples to compute BCLs and precision (SE) using the ``lb_aggregator``  function in the aggregator.R file.  Inputs for the aggregator function are:
+In the third step, aggregate ML phylogenies from all little samples to compute BCLs and precision (standard error, SE) using the ``lb_aggregator``  function in the lb_aggregator.R file.  Inputs for the lb_aggregator function are:
 
 ```
-lb_aggregator(path, tree_format, candiate_tree, s = NULL, r = NULL, output_file = NULL)
+lb_aggregator(path, tree_format, candiate_tree, s = NULL, r = NULL, output_tree = NULL)
 
 
 path           : a character vector that specifies locations of the inferred ML trees. For example, inferred trees for little sample #1 should be stored in a directory named Subsample1 in the input directory.
@@ -56,7 +56,7 @@ s              : a numeric value input that specifies the number of little sampl
 
 r              : a numeric value specifying the number of bootstrap replicate trees for a little sample to use. If r = NULL, inferred trees from all replicates for a little sample are used. 
 
-output_file    : a character vector specifying the output file name. The output is an object of class "phylo"  in ‘.nwk’ format that contains BCLs. If output_file = NULL, the output file name will be 'output_tree_lb.nwk'.
+output_tree    : a character vector specifying the output file name. The output is an object of class "phylo"  in ‘.nwk’ format that contains BCLs. If output_tree = NULL, the output file name will be 'output_tree_lb.nwk'.
 
 precision      : TRUE/FALSE. If TRUE (T), output files are objects of class "phylo"  in ‘.nwk’ format. If output_file = NULL, the output file name will be 'output_tree_lb.nwk', and 'output_tree_lb_precision.nwk'
 ```
@@ -71,8 +71,8 @@ precision      : TRUE/FALSE. If TRUE (T), output files are objects of class "phy
 To perform the little bootstraps analyses on your local computer, please follow these steps:<br /><br />
 1.	Download and install R (https://www.r-project.org/) and Rstudio (https://rstudio.com/products/rstudio/download/).<br />
 2.	Download ‘Codes’ directory on the local computer. <br />
-3.	In the Rstudio session, type ``setwd(“directory path”)`` to change the working directory to the folder that contains ``lb_sampler`` and ``aggregator`` function<br />
-4.	Type ``source(lb_sampler)``, and ``source(aggregator)`` to make available these  function in global environment. <br />
+3.	In the Rstudio session, type ``setwd(“directory path”)`` to change the working directory to the folder that contains ``lb_sampler`` and ``lb_aggregator`` function<br />
+4.	Type ``source(lb_sampler)``, and ``source(lb_aggregator)`` to make available these  function in global environment. <br />
 5.	Download and install an ML tree inference software (e.g., IQ-TREE). <br />
 6.	Install folowwing R packages if those are not installed. 
 
@@ -123,10 +123,10 @@ Trees for replicate datasets will be stored in each Subsample directory. The tre
 4.	For the final step, type 
 
 ```R
-aggregator("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 3, r = 3, output_file = "example_output")
+lb_aggregator("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 3, r = 3, precision =TRUE , output_tree = "example_output")
 ```
 
-The function will output the candidate tree file with BCLs, and the name of the output tree file will be `` example_output.nwk``.<br />
+The function will output the candidate tree file with BCLs and another output tree with precision(SE), and the name of the output tree file will be `` example_output.nwk``.<br />
 
 <br />
 
