@@ -1,9 +1,9 @@
 # Little Bootstraps 
-Using the little bootstraps approach to generate bootstrap confidence limits (BCLs) on phylogenies inferred from a long sequence alignment (manuscript in review). We provide two R functions for automatic little boottsrap analysis. 
+Using the little bootstraps approach to generate bootstrap confidence limits (BCLs) on phylogenies inferred from a long sequence alignment (manuscript in review). We provide two R functions for automatic little bootstrap analysis. 
 <br />
 
 ## Directory Structure 
-The "Automatic" directory contains files for two R functions: ``lb_automatic`` (lb_sampler.R), and ``little_bootstraps`` (little_bootstraps.R). This directory also contains ``iqtree.exe`` for inferring ML trees using little bootstrap replicates. The fasta file ``mtCDNA.fas`` and the phylogenetic tree file ``mtCDNA.nwk`` are for test run of these two R functions. The ``lb_automatic`` (lb_sampler.R) require only the fasta file and the candidate tree file for inferring the little bootstrap BCLs with their precision (Standard Error, SE). This function automatically determines little bootstraps parameters:
+The "Automatic" directory contains files for two R functions: ``lb_automatic`` (lb_automatic.R), and ``little_bootstraps`` (little_bootstraps.R). This directory also contains ``iqtree.exe`` for inferring ML trees using little bootstrap replicates. The fasta file ``mtCDNA.fas`` and the phylogenetic tree file ``mtCDNA.nwk`` are for the test run of these two R functions. The ``lb_automatic`` (lb_sampler.R) requires only the fasta file and the candidate tree file for inferring the little bootstrap BCLs with their precision (Standard Error, SE). This function automatically determines little bootstraps parameters:
 
 ```
 g      : Subsample size
@@ -17,7 +17,7 @@ The ``little_bootstraps`` (little_bootstraps.R) uses the user defined little boo
 
 ## Description of R functions
 
-The R function ``lb_automatic`` can automatically select the little bootstrap parameters and estimate the BCLs, but the ``little_bootstraps`` require user specific little bootstrap parameters for the analysis.
+The R function ``lb_automatic`` can automatically select the little bootstrap parameters and estimate the BCLs, but the ``little_bootstraps`` require user-specific little bootstrap parameters for the analysis.
 
 ```
 lb_automatic(data_path, candiate_tree, evo_model = NULL, output_tree = NULL, del = 0.001, precision = FALSE)
@@ -27,11 +27,11 @@ data_path           : a character vector that specifies locations of the inferre
 
 candidate_tree : an object of class "phylo" specifying the phylogeny for which BCLs are desired. 
 
-evo_model      : a string vector that specify the substitution model for infferent ML trees from little bootstrap replicates. If NULL, the model will be determined by IQTREE.
+evo_model      : a string vector that specifies the substitution model for inferring ML trees from little bootstrap replicates. If NULL, the model will be determined by IQTREE.
 
 output_tree    : a character vector specifying the output file name. The output is an object of class "phylo"  in ‘.nwk’ format that contains BCLs. If output_tree = NULL, the output file name will be 'output_tree_lb.nwk'.
 
-del            : a numeric value to specify the treshold of the change in the average BCLs for selecting the number of subsamples and replicates.
+del            : a numeric value to specify the threshold of the change in the average BCLs for selecting the number of subsamples and replicates.
 
 precision      : TRUE/FALSE. If TRUE (T), output files are objects of class "phylo"  in ‘.nwk’ format. If output_file = NULL, the output file name will be 'output_tree_lb.nwk', and 'output_tree_lb_precision.nwk'
 ```
@@ -43,7 +43,7 @@ precision      : TRUE/FALSE. If TRUE (T), output files are objects of class "phy
 little_bootstraps(data_path, candiate_tree, evo_model = NULL, lb_parameter = c(0.8,10,10), output_tree = NULL, del = 0.001, precision = FALSE)
 
 
-data_path           : a character vector that specifies locations of the inferred ML trees. For example, fasta file mtCDNA for little bootstrap analysis in the the Automatic folder. Therefore, the data_path will be "~/Automatic/mtCDNA.fas"
+data_path           : a character vector that specifies locations of the dataset. For example, there is a fasta file "mtCDNA.fas" for example in the the Automatic folder. Therefore, the data_path will be "~/Automatic/mtCDNA.fas"
 
 candidate_tree : an object of class "phylo" specifying the phylogeny for which BCLs are desired. 
 
@@ -70,7 +70,7 @@ To perform the little bootstraps analyses on your local computer, please follow 
 2.	Download ‘Automatic’ directory on the local computer. <br />
 3.	In the Rstudio session, type ``setwd(“directory path”)`` to change the working directory to the folder that contains dataset and R codes<br />
 4.	Type ``source(lb_automatic)``, and ``source(little_bootstraps)`` to make available these  function in global environment. <br />
-5.	Install folowwing R packages if those are not installed. 
+5.	Install the folowwing R packages if those are not installed. 
 
 ```R
 install.packages("BiocManager")
