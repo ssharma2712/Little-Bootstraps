@@ -110,7 +110,11 @@ little_bootstraps <- function(data_path, candidate_tree, evo_model = NULL, lb_pa
         x[l] <- list(ape::read.tree(lf[l]))
         print(c("Subsampe=", k, "Replicate=", l))
       }
+      ff <- tempfile()
+      png(filename = ff)
       b <- phangorn::plotBS(candidate_tree, x, p =10,  type = "unrooted")
+      dev.off()
+      unlink(ff)
       sub <- cbind(sub, as.numeric(b$node.label)/100)
       
     }
@@ -175,7 +179,11 @@ little_bootstraps <- function(data_path, candidate_tree, evo_model = NULL, lb_pa
         x[l] <- list(ape::read.tree(lf[l]))
         print(c("Subsampe=", k, "Replicate=", l))
       }
+      ff <- tempfile() 
+      png(filename = ff)
       b <- phangorn::plotBS(candidate_tree, x, p =10,  type = "unrooted")
+      dev.off()
+      unlink(ff)
       sub <- cbind(sub, as.numeric(b$node.label)/100)
       
     }
@@ -233,7 +241,11 @@ little_bootstraps <- function(data_path, candidate_tree, evo_model = NULL, lb_pa
         x[l] <- list(ape::read.tree(lf[l]))
         print(c("Subsampe=", k, "Replicate=", l))
       }
+      ff <- tempfile()
+      png(filename = ff)
       b <- phangorn::plotBS(candidate_tree, x, p =10,  type = "unrooted")
+      dev.off()
+      unlink(ff)
       sub <- cbind(sub, as.numeric(b$node.label)/100)
       
     }
@@ -268,7 +280,11 @@ little_bootstraps <- function(data_path, candidate_tree, evo_model = NULL, lb_pa
           x[l] <- list(ape::read.tree(lf[ran_rep[l]]))
           
         }
+        ff <- tempfile()
+        png(filename = ff)
         b <- phangorn::plotBS(candidate_tree, x, p =10,  type = "unrooted")
+        dev.off()
+        unlink(ff)
         sub <- cbind(sub, as.numeric(b$node.label)/100)
         
       }
