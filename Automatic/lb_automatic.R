@@ -328,7 +328,7 @@ lb_automatic <- function(data_path, candidate_tree, evo_model = NULL, output_tre
   rep_avg <- c(0,0)
   
   for(j in 3:4){
-    a <- lb_avg_bcl(dirname(di), ".treefile", candidate_tree, s = 3, r = j)
+    a <- lb_avg_bcl(dirname(data_path), ".treefile", candidate_tree, s = 3, r = j)
     rep_avg <- c(rep_avg, a)
   }
   
@@ -350,12 +350,12 @@ lb_automatic <- function(data_path, candidate_tree, evo_model = NULL, output_tre
         #print(c('Subsample=',m, 'Replicates=', n))
       }
     }
-    a <- lb_avg_bcl(dirname(di), ".treefile", candidate_tree, s = i, r = j)
+    a <- lb_avg_bcl(dirname(data_path), ".treefile", candidate_tree, s = i, r = j)
     rep_avg <- c(rep_avg, a)
   }
   
   for(i in 3:4){
-    a <- lb_avg_bcl(dirname(di), ".treefile", candidate_tree, s = i, r = j)
+    a <- lb_avg_bcl(dirname(data_path), ".treefile", candidate_tree, s = i, r = j)
     sub_avg <- c(sub_avg, a)
   }
   while(abs(sub_avg[i]-sub_avg[i-1])>del){
@@ -383,7 +383,7 @@ lb_automatic <- function(data_path, candidate_tree, evo_model = NULL, output_tre
         #print(c('Subsample=',i, 'Replicates=', j))
       }
     }
-    a <- lb_avg_bcl(dirname(di), ".treefile", candidate_tree, s = i, r = j)
+    a <- lb_avg_bcl(dirname(data_path), ".treefile", candidate_tree, s = i, r = j)
     sub_avg <- c(sub_avg, a)
   }
   setwd(directory)
@@ -405,7 +405,7 @@ lb_automatic <- function(data_path, candidate_tree, evo_model = NULL, output_tre
       #print(c('Subsample=',m, 'Replicates=', n))
     }
   }
-  a <- lb_avg_bcl(dirname(di), ".treefile", candidate_tree, s = i, r = j)
+  a <- lb_avg_bcl(dirname(data_path), ".treefile", candidate_tree, s = i, r = j)
   rep_avg <- c(rep_avg, a)
   
   while(abs(rep_avg[j]-rep_avg[j-1])>del){
@@ -426,16 +426,16 @@ lb_automatic <- function(data_path, candidate_tree, evo_model = NULL, output_tre
         #print(c('Subsample=',m, 'Replicates=', n))
       }
     }
-    a <- lb_avg_bcl(dirname(di), ".treefile", candidate_tree, s = 3, r = i)
+    a <- lb_avg_bcl(dirname(data_path), ".treefile", candidate_tree, s = 3, r = i)
     rep_avg <- c(rep_avg, a)
   }
   print(c("Subsample = ", i, "Replicate = ", j))
   setwd(directory)
   
   if(precision == FALSE){
-    aggregator(dirname(di), ".treefile", candidate_tree, s = i, r = j, output_tree = output_tree)
+    aggregator(dirname(data_path), ".treefile", candidate_tree, s = i, r = j, output_tree = output_tree)
   }else{
-    lb_precision(dirname(di), ".treefile", candidate_tree, s = i, r = j, output_tree = output_tree)
+    lb_precision(dirname(data_path), ".treefile", candidate_tree, s = i, r = j, output_tree = output_tree)
   }
   
 }
