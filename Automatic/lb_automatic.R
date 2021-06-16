@@ -268,8 +268,8 @@ lb_automatic <- function(data_path, candidate_tree, evo_model = NULL, output_tre
         ff <- tempfile()
         png(filename = ff)
         b <- phangorn::plotBS(candidate_tree, x, p =10,  type = "unrooted")
-        ff <- tempfile()  
-        png(filename = ff)
+        dev.off()  
+        unlink(ff)
         sub <- cbind(sub, as.numeric(b$node.label)/100)
         
       }
