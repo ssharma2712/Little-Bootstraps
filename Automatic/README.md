@@ -20,7 +20,7 @@ The ``little_bootstraps`` (little_bootstraps.R) uses the user defined little boo
 The R function ``lb_automatic`` can automatically select the little bootstrap parameters and estimate the BCLs, but the ``little_bootstraps`` require user-specific little bootstrap parameters for the analysis.
 
 ```
-lb_automatic(data_path, candiate_tree, evo_model = NULL, output_tree = NULL, del = 0.001, precision = FALSE)
+lb_automatic(data_path, candidate_tree, evo_model = NULL, output_tree = NULL, del = 0.001, precision = FALSE)
 
 
 data_path           : a character vector that specifies locations of the inferred ML trees. For example, fasta file mtCDNA for little bootstrap analysis in the the Automatic folder. Therefore, the data_path will be "~/Automatic/mtCDNA.fas"
@@ -40,7 +40,7 @@ precision      : TRUE/FALSE. If TRUE (T), output files are objects of class "phy
 <br />
 
 ```
-little_bootstraps(data_path, candiate_tree, evo_model = NULL, lb_parameter = c(0.8,10,10), output_tree = NULL, del = 0.001, precision = FALSE)
+little_bootstraps(data_path, candidate_tree, evo_model = NULL, lb_parameter = c(0.8,10,10), output_tree = NULL, del = 0.001, precision = FALSE)
 
 
 data_path           : a character vector that specifies locations of the dataset. For example, there is a fasta file "mtCDNA.fas" in the Automatic folder. Therefore, the data_path will be "~/Automatic/mtCDNA.fas"
@@ -91,14 +91,14 @@ To perform the little bootstraps analyses on the example dataset, please follow 
 2.	Run the function in the R session by typing 
 
 ```R
-lb_automatic("~/Automatic/mtCDNA.fas", candiate_tree = "~/Automatic/mtCDNA.nwk", evo_model = "GTR+G4", output_tree = NULL, del = 0.001, precision = TRUE)
+lb_automatic("~/Automatic/mtCDNA.fas", candidate_tree = "~/Automatic/mtCDNA.nwk", evo_model = "GTR+G4", output_tree = NULL, del = 0.001, precision = TRUE)
 
 OR
 
-little_bootstraps("~/Automatic/mtCDNA.fas", candiate_tree = "~/Automatic/mtCDNA.nwk", evo_model = "GTR+G4", lb_parameter = c(0.8,10,10) output_tree = NULL, del = 0.001, precision = TRUE)
+little_bootstraps("~/Automatic/mtCDNA.fas", candidate_tree = "~/Automatic/mtCDNA.nwk", evo_model = "GTR+G4", lb_parameter = c(0.8,10,10), output_tree = NULL, del = 0.001, precision = TRUE)
 ```
 
-Both function will output two trees, one tree (output_tree_lb.nwk) with little bootstrap BCLs and another tree (output_tree_lb_precision.nwk) with the precision (SE). If ``precision = FALSE``, there will be one output tree (output_tree_lb.nwk) with BCLs.
+Both functions will output two trees, one tree (output_tree_lb.nwk) with little bootstrap BCLs and another tree (output_tree_lb_precision.nwk) with the precision (SE). If ``precision = FALSE``, there will be one output tree (output_tree_lb.nwk) with BCLs.
 
 
 #### Software and Packages' Version:
