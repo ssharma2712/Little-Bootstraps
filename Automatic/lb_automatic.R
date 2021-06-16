@@ -95,7 +95,11 @@ lb_automatic <- function(data_path, candidate_tree, evo_model = NULL, output_tre
         x[l] <- list(ape::read.tree(lf[l]))
         print(c("Subsampe=", k, "Replicate=", l))
       }
+      ff <- tempfile()
+      png(filename = ff)
       b <- phangorn::plotBS(candidate_tree, x, p =10,  type = "unrooted")
+      dev.off()
+      unlink(ff)
       sub <- cbind(sub, as.numeric(b$node.label)/100)
       
     }
@@ -160,7 +164,11 @@ lb_automatic <- function(data_path, candidate_tree, evo_model = NULL, output_tre
         x[l] <- list(ape::read.tree(lf[l]))
         print(c("Subsampe=", k, "Replicate=", l))
       }
+      ff <- tempfile()
+      png(filename = ff)
       b <- phangorn::plotBS(candidate_tree, x, p =10,  type = "unrooted")
+      dev.off()
+      unlink(ff)
       sub <- cbind(sub, as.numeric(b$node.label)/100)
       
     }
@@ -216,9 +224,13 @@ lb_automatic <- function(data_path, candidate_tree, evo_model = NULL, output_tre
       x<- ape::rmtree(r, candidate_tree$Nnode)
       for(l in 1:r){   # number of replicates
         x[l] <- list(ape::read.tree(lf[l]))
-        print(c("Subsampe=", k, "Replicate=", l))
+        print(c("Subsample=", k, "Replicate=", l))
       }
+      ff <- tempfile()    
+      png(filename = ff)
       b <- phangorn::plotBS(candidate_tree, x, p =10,  type = "unrooted")
+      dev.off()
+      unlink(ff)
       sub <- cbind(sub, as.numeric(b$node.label)/100)
       
     }
@@ -253,7 +265,11 @@ lb_automatic <- function(data_path, candidate_tree, evo_model = NULL, output_tre
           x[l] <- list(ape::read.tree(lf[ran_rep[l]]))
           
         }
+        ff <- tempfile()
+        png(filename = ff)
         b <- phangorn::plotBS(candidate_tree, x, p =10,  type = "unrooted")
+        ff <- tempfile()  
+        png(filename = ff)
         sub <- cbind(sub, as.numeric(b$node.label)/100)
         
       }
