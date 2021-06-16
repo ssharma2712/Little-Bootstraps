@@ -335,9 +335,9 @@ little_bootstraps <- function(data_path, candidate_tree, evo_model = NULL, lb_pa
   ###########
 
   if(precision == FALSE){
-    aggregator(dirname(di), ".treefile", candidate_tree, s = lb_parameter[2], r = lb_parameter[3], output_tree = output_tree)
+    aggregator(dirname(data_path), ".treefile", candidate_tree, s = lb_parameter[2], r = lb_parameter[3], output_tree = output_tree)
   }else{
-    lb_precision(dirname(di), ".treefile", candidate_tree, s = lb_parameter[2], r = lb_parameter[2], output_tree = output_tree)
+    lb_precision(dirname(data_path), ".treefile", candidate_tree, s = lb_parameter[2], r = lb_parameter[2], output_tree = output_tree)
   }
   
 }
