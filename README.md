@@ -40,7 +40,7 @@ In the second step, the maximum likelihood (ML) tree is inferred for each replic
 
 <br />
 
-In the third step, aggregate ML phylogenies from all little samples to compute BCLs and precision (standard error, SE) using the ``lb_aggregator``  function in the lb_aggregator.R file.  Inputs for the lb_aggregator function are:
+In the third step, aggregate ML phylogenies from all little samples to compute BCLs using the ``lb_aggregator``  function in the lb_aggregator.R file.  Inputs for the lb_aggregator function are:
 
 ```
 lb_aggregator(path, tree_format, candiate_tree, s = NULL, r = NULL, output_tree = NULL)
@@ -58,7 +58,30 @@ r              : a numeric value specifying the number of bootstrap replicate tr
 
 output_tree    : a character vector specifying the output file name. The output is an object of class "phylo"  in ‘.nwk’ format that contains BCLs. If output_tree = NULL, the output file name will be 'output_tree_lb.nwk'.
 
-precision      : TRUE/FALSE. If TRUE (T), output files are objects of class "phylo"  in ‘.nwk’ format. If output_file = NULL, the output file name will be 'output_tree_lb.nwk', and 'output_tree_lb_precision.nwk'
+
+```
+<br />
+If the user wants to output the candidate tree with little bootstrap estimated BCLs and precision (SE), the ``lb_precision.R`` should be used. The lb_precision function aggregates ML phylogenies from all subsamples and outputs two different tree files. One tree file contains little bootstraps BCLs, and another tree file includes the precision of BCLs for each species group. The inputs for lb_precision function are:
+
+```
+lb_precision(path, tree_format, candidate_tree, s = NULL, r = NULL, rep = 100, output_tree = NULL)
+
+
+path           : a character vector that specifies locations of the inferred ML trees. For example, inferred trees for little sample #1 should be stored in a directory named Subsample1 in the input directory.
+
+tree_format    : a character vector that indicates the tree file format in the directory. Tree file format must be ‘.nwk’,  or ‘.treefile’
+
+candidate_tree : an object of class "phylo" specifying the phylogeny for which BCLs are desired. 
+
+s              : a numeric value input that specifies the number of little samples to use. If s = NULL, inferred trees from all little samples in the directory are used for computing BCLs. 
+
+r              : a numeric value specifying the number of bootstrap replicate trees for a little sample to use. If r = NULL, inferred trees from all replicates for a little sample are used. 
+
+rep            : A numeric value indicates the number of bootstrap replicates for calculating the precision (SE) of little bootstrap BLCs. The default number of replicates is equal to 100. A user can change the value. 
+
+output_tree    : a character vector specifying the output file name. The output is an object of class "phylo"  in ‘.nwk’ format that contains BCLs. If output_tree = NULL, the output file name will be 'output_tree_lb.nwk'.
+
+
 ```
 <br />
 
@@ -125,8 +148,13 @@ Trees for replicate datasets will be stored in each Subsample directory. The tre
 ```R
 lb_aggregator("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 3, r = 3, precision =TRUE , output_tree = "example_output")
 ```
+The function will output the candidate tree file with BCLs, and the name of the output tree file will be `` example_output.nwk``.<br />
+OR
+```R
+lb_precision("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 3, r = 3, rep = 100 , output_tree = "example_output")
+```
 
-The function will output the candidate tree file with BCLs and another output tree with precision(SE), and the name of the output tree file will be `` example_output.nwk``.<br />
+The function will output the candidate tree file with BCLs and another output tree with precision(SE), and the name of output tree files will be `` example_output.nwk`` and `` example_output_precision.nwk``.<br />
 
 <br />
 
