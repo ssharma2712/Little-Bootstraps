@@ -23,7 +23,7 @@ The R function ``lb_automatic`` can automatically select the little bootstrap pa
 lb_automatic(data_path, candidate_tree, evo_model = NULL, output_tree = NULL, del = 0.001, precision = FALSE)
 
 
-data_path           : a character vector that specifies locations of the inferred ML trees. For example, fasta file mtCDNA for little bootstrap analysis in the the Automatic folder. Therefore, the data_path will be "~/Automatic/mtCDNA.fas"
+data_path           : a character vector that specifies locations of the inferred ML trees. For example, fasta file mtCDNA for little bootstrap analysis in the Automatic folder. Therefore, the data_path will be "~/Automatic/mtCDNA.fas"
 
 candidate_tree : an object of class "phylo" specifying the phylogeny for which BCLs are desired. 
 
@@ -69,8 +69,8 @@ To perform the little bootstraps analyses on your local computer, please follow 
 1.	Download and install R (https://www.r-project.org/) and Rstudio (https://rstudio.com/products/rstudio/download/).<br />
 2.	Download the ‘Automatic’ directory on the local computer. <br />
 3.	In the Rstudio session, type ``setwd(“directory path”)`` to change the working directory to the folder that contains dataset and R codes<br />
-4.	Type ``source(lb_automatic)``, and ``source(little_bootstraps)`` to make available these  function in global environment. <br />
-5.	Install the follwwing R packages if those are not installed. 
+4.	Type ``source(lb_automatic.R)``, and ``source(little_bootstraps.R)`` to make available these functions in global environment. <br />
+5.	Install the following R packages if those are not installed. 
 
 ```R
 install.packages("BiocManager")
