@@ -51,7 +51,11 @@ lb_aggregator <- function(path, tree_format, candidate_tree, s = NULL, r = NULL,
       x[l] <- list(ape::read.tree(lf[l]))
       print(c("Subsampe=", k, "Replicate=", l))
     }
+    ff <- tempfile()      
+    png(filename = ff)
     b <- phangorn::plotBS(candidate_tree, x, p =10,  type = "unrooted")
+    dev.off()
+    unlink(ff)
     sub <- cbind(sub, as.numeric(b$node.label)/100)
     
   }
