@@ -31,7 +31,7 @@ evo_model      : a string vector that specifies the substitution model for infer
 
 output_tree    : a character vector specifying the output file name. The output is an object of class "phylo"  in ‘.nwk’ format that contains BCLs. If output_tree = NULL, the output file name will be 'output_tree_lb.nwk'.
 
-del            : a numeric value to specify the threshold of the change in the average BCLs for selecting the number of subsamples and replicates.
+del            : a numeric value to specify the threshold of the change in the average BCLs for selecting the number of subsamples and replicates. The value should be less than 1. For example, if a user allows 1% change in average BCLs, the del = 0.01.
 
 precision      : TRUE/FALSE. If TRUE (T), output files are objects of class "phylo"  in ‘.nwk’ format. If output_file = NULL, the output file name will be 'output_tree_lb.nwk', and 'output_tree_lb_precision.nwk'
 ```
@@ -53,7 +53,7 @@ lb_parameter   : a numeric vector specifying little bootstrap parameters (g,s,r)
 
 output_tree    : a character vector specifying the output file name. The output is an object of class "phylo"  in ‘.nwk’ format that contains BCLs. If output_tree = NULL, the output file name will be 'output_tree_lb.nwk'.
 
-del            : a numeric value to specify the treshold of the change in the average BCLs for selecting the number of subsamples and replicates.
+del            : a numeric value to specify the treshold of the change in the average BCLs for selecting the number of subsamples and replicates. The value should be less than 1. For example, if a user allows 1% change in average BCLs, the del = 0.01.
 
 precision      : TRUE/FALSE. If TRUE (T), output files are objects of class "phylo"  in ‘.nwk’ format. If output_file = NULL, the output file name will be 'output_tree_lb.nwk', and 'output_tree_lb_precision.nwk'
 ```
