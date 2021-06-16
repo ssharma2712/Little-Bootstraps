@@ -95,7 +95,7 @@ To perform the little bootstraps analyses on your local computer, please follow 
 1.	Download and install R (https://www.r-project.org/) and Rstudio (https://rstudio.com/products/rstudio/download/).<br />
 2.	Download ‘Codes’ directory on the local computer. <br />
 3.	In the Rstudio session, type ``setwd(“directory path”)`` to change the working directory to the folder that contains ``lb_sampler`` and ``lb_aggregator`` function<br />
-4.	Type ``source(lb_sampler)``, and ``source(lb_aggregator)`` to make available these  function in global environment. <br />
+4.	Type ``source(lb_sampler)``, and ``source(lb_aggregator)`` or  ``source(lb_precision)`` to make available these  function in global environment. <br />
 5.	Download and install an ML tree inference software (e.g., IQ-TREE). <br />
 6.	Install folowwing R packages if those are not installed. 
 
@@ -146,7 +146,7 @@ Trees for replicate datasets will be stored in each Subsample directory. The tre
 4.	For the final step, type 
 
 ```R
-lb_aggregator("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 3, r = 3, precision =TRUE , output_tree = "example_output")
+lb_aggregator("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 3, r = 3,  output_tree = "example_output")
 ```
 The function will output the candidate tree file with BCLs, and the name of the output tree file will be `` example_output.nwk``.<br />
 OR
