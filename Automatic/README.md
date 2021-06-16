@@ -87,7 +87,7 @@ install.packages("phyclust")
 
 <br />
 To perform the little bootstraps analyses on the example dataset, please follow these steps:<br /><br />
-1.	Download the ``Example`` directory on the local computer. <br />
+1.	Download the ``Automatic`` directory on the local computer. <br />
 2.	Run the function in the R session by typing 
 
 ```R
