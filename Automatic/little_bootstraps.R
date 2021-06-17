@@ -108,7 +108,7 @@ little_bootstraps <- function(data_path, candidate_tree, evo_model = NULL, lb_pa
       
       for(l in 1:r){   # number of replicates
         x[l] <- list(ape::read.tree(lf[l]))
-        print(c("Subsampe=", k, "Replicate=", l))
+        print(c("Subsample=", k, "Replicate=", l))
       }
       ff <- tempfile()
       png(filename = ff)
@@ -177,7 +177,7 @@ little_bootstraps <- function(data_path, candidate_tree, evo_model = NULL, lb_pa
       
       for(l in 1:r){   # number of replicates
         x[l] <- list(ape::read.tree(lf[l]))
-        print(c("Subsampe=", k, "Replicate=", l))
+        print(c("Subsample=", k, "Replicate=", l))
       }
       ff <- tempfile() 
       png(filename = ff)
@@ -239,7 +239,7 @@ little_bootstraps <- function(data_path, candidate_tree, evo_model = NULL, lb_pa
       x<- ape::rmtree(r, candidate_tree$Nnode)
       for(l in 1:r){   # number of replicates
         x[l] <- list(ape::read.tree(lf[l]))
-        print(c("Subsampe=", k, "Replicate=", l))
+        print(c("Subsample=", k, "Replicate=", l))
       }
       ff <- tempfile()
       png(filename = ff)
