@@ -93,7 +93,7 @@ lb_automatic <- function(data_path, candidate_tree, evo_model = NULL, output_tre
       
       for(l in 1:r){   # number of replicates
         x[l] <- list(ape::read.tree(lf[l]))
-        print(c("Subsampe=", k, "Replicate=", l))
+        print(c("Subsample=", k, "Replicate=", l))
       }
       ff <- tempfile()
       png(filename = ff)
@@ -162,7 +162,7 @@ lb_automatic <- function(data_path, candidate_tree, evo_model = NULL, output_tre
       
       for(l in 1:r){   # number of replicates
         x[l] <- list(ape::read.tree(lf[l]))
-        print(c("Subsampe=", k, "Replicate=", l))
+        print(c("Subsample=", k, "Replicate=", l))
       }
       ff <- tempfile()
       png(filename = ff)
