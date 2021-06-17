@@ -23,7 +23,7 @@ The R function ``lb_automatic`` can automatically select the little bootstrap pa
 lb_automatic(data_path, candidate_tree, evo_model = NULL, output_tree = NULL, del = 0.001, precision = FALSE)
 
 
-data_path           : a character vector that specifies locations of the inferred ML trees. For example, fasta file mtCDNA for little bootstrap analysis in the Automatic folder. Therefore, the data_path will be "~/Automatic/mtCDNA.fas"
+data_path      : a character vector that specifies locations of the inferred ML trees. For example, fasta file mtCDNA for little bootstrap analysis in the Automatic folder. Therefore, the data_path will be "~/Automatic/mtCDNA.fas"
 
 candidate_tree : an object of class "phylo" specifying the phylogeny for which BCLs are desired. 
 
