@@ -3,7 +3,7 @@ Using the little bootstraps approach to generate bootstrap confidence limits (BC
 <br />
 
 ## Directory Structure 
-The "Codes" directory contains files for two R functiosn: ``lb_sampler`` (lb_sampler.R), and ``lb_aggregator`` (lb_agrregator.R), and ``lb_precision`` (lb_precision.R). <br />
+The "Codes" directory contains files for two R function: ``lb_sampler`` (lb_sampler.R), and ``lb_aggregator`` (lb_agrregator.R), and ``lb_precision`` (lb_precision.R). <br />
 <br />
 The "Example" directory contains an example data file (example.fasta) and a file containing the phylogenetic tree in the newick format (ex_candiate_tree.nwk) for which BCLs are desired. <br />
 <br />
@@ -21,7 +21,7 @@ lb_sampler(data_path,  g,  s,  r)
 
 data_path         : input sequence alignment in fasta format that will be used for little bootstrap analyses. 
 
-g                 : a numeric value within the range (0.6<= g <= 0.9) that specify the little sample size. The little sample size is equal to L^g where L is the sequence length determined from the input alignment.  
+g                 : a numeric value within the range (0.6<= g <= 0.9) that specifies the little sample size. The little sample size is equal to L^g where L is the sequence length determined from the input alignment.  
 
 s                 : a numeric value that specifies the number of little samples. 
 
@@ -32,7 +32,7 @@ r                 : a numeric value that specifies the number of replicates for 
 #### Second step:
 
 <br />
-In the second step, the maximum likelihood (ML) tree is inferred for each replicate dataset. We used the IQ-TREE software for all our ML tree inference, which can be downloaded from http://www.iqtree.org/. Both Linux and Windows versions of IQ-TREE software are available. 
+In the second step, the maximum likelihood (ML) tree is inferred for each replicate dataset. We used the IQ-TREE software for all our ML tree inferences, which can be downloaded from http://www.iqtree.org/. Both Linux and Windows versions of IQ-TREE software are available. 
 
 <br />
 
@@ -43,7 +43,7 @@ In the second step, the maximum likelihood (ML) tree is inferred for each replic
 In the third step, aggregate ML phylogenies from all little samples to compute BCLs using the ``lb_aggregator``  function in the lb_aggregator.R file.  Inputs for the lb_aggregator function are:
 
 ```
-lb_aggregator(path, tree_format, candiate_tree, s = NULL, r = NULL, output_tree = NULL)
+lb_aggregator(path, tree_format, candidate_tree, s = NULL, r = NULL, output_tree = NULL)
 
 
 path           : a character vector that specifies locations of the inferred ML trees. For example, inferred trees for little sample #1 should be stored in a directory named Subsample1 in the input directory.
@@ -95,9 +95,9 @@ To perform the little bootstraps analyses on your local computer, please follow 
 1.	Download and install R (https://www.r-project.org/) and Rstudio (https://rstudio.com/products/rstudio/download/).<br />
 2.	Download ‘Codes’ directory on the local computer. <br />
 3.	In the Rstudio session, type ``setwd(“directory path”)`` to change the working directory to the folder that contains ``lb_sampler`` and ``lb_aggregator`` function<br />
-4.	Type ``source(lb_sampler)``, and ``source(lb_aggregator)`` or  ``source(lb_precision)`` to make available these  function in global environment. <br />
+4.	Type ``source(lb_sampler.R)``, and ``source(lb_aggregator.R)`` or  ``source(lb_precision.R)`` to make these functions available in the global environment. <br />
 5.	Download and install an ML tree inference software (e.g., IQ-TREE). <br />
-6.	Install folowwing R packages if those are not installed. 
+6.	Install the following R packages if thay are not installed. 
 
 ```R
 install.packages("BiocManager")
@@ -125,7 +125,7 @@ This function will create three directories in the working directory:
 ```
 Subsample1
 Subsample2
-Subsample2
+Subsample3
 ```
 
 Each subsample directory will contain three little bootstrap replicate datasets. For example, the ``Subsample1`` directory will contain 
@@ -133,7 +133,7 @@ Each subsample directory will contain three little bootstrap replicate datasets.
 ```
 example_sub1rep1.fasta
 example_sub1rep2.fasta
-example_sub1rep2.fasta
+example_sub1rep3.fasta
 ```
 <br />
 3.	Infer ML phylogenetic tree for each replicate dataset using the IQTREE software. Users specify the substitution model and other tree inference settings subjectively for the software. For example, we used the IQTREE analysis for the replicate 1 dataset in Subsample1:<br />
@@ -146,12 +146,12 @@ Trees for replicate datasets will be stored in each Subsample directory. The tre
 4.	For the final step, type 
 
 ```R
-lb_aggregator("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 3, r = 3,  output_tree = "example_output")
+lb_aggregator("~/Example",".treefile", "~/Example/ex_candidate_tree.nwk", s = 3, r = 3,  output_tree = "example_output")
 ```
 The function will output the candidate tree file with BCLs, and the name of the output tree file will be `` example_output.nwk``.<br />
 OR
 ```R
-lb_precision("~/Example",".treefile", "~/Example/ex_candidate.nwk", s = 3, r = 3, rep = 100 , output_tree = "example_output")
+lb_precision("~/Example",".treefile", "~/Example/ex_candidate_tree.nwk", s = 3, r = 3, rep = 100 , output_tree = "example_output")
 ```
 
 The function will output the candidate tree file with BCLs and another output tree with precision(SE), and the name of output tree files will be `` example_output.nwk`` and `` example_output_precision.nwk``.<br />
