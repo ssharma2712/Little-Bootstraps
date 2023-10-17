@@ -95,7 +95,7 @@ To perform the little bootstraps analyses on your local computer, please follow 
 1.	Download and install R (https://www.r-project.org/) and Rstudio (https://rstudio.com/products/rstudio/download/).<br />
 2.	Download ‘Codes’ directory on the local computer. <br />
 3.	In the Rstudio session, type ``setwd(“directory path”)`` to change the working directory to the folder that contains ``lb_sampler`` and ``lb_aggregator`` function<br />
-4.	Type ``source(lb_sampler.R)``, and ``source(lb_aggregator.R)`` or  ``source(lb_precision.R)`` to make these functions available in the global environment. <br />
+4.	Type ``source("lb_sampler.R")``, and ``source("lb_aggregator.R")`` or  ``source("lb_precision.R")`` to make these functions available in the global environment. <br />
 5.	Download and install an ML tree inference software (e.g., IQ-TREE). <br />
 6.	Install the following R packages if thay are not installed. 
 
